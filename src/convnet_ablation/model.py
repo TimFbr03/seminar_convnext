@@ -7,6 +7,7 @@ class FashionConvNeXt(nn.Module):
 
     def __init__(
         self,
+        in_channels=3,   # ← neu: STL-10 = 3, Fashion-MNIST = 1
         dim=32,
         num_classes=10,
         patchify=False,
@@ -19,16 +20,16 @@ class FashionConvNeXt(nn.Module):
         if patchify:
 
             self.stem = nn.Conv2d(
-                1,
+                in_channels,
                 dim,
                 kernel_size=4,
-                stride=2
+                stride=4
             )
 
         else:
 
             self.stem = nn.Conv2d(
-                1,
+                in_channels,
                 dim,
                 kernel_size=3,
                 padding=1

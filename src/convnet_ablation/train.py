@@ -180,16 +180,16 @@ def main():
 
     transform = transforms.ToTensor()
 
-    train_dataset = datasets.FashionMNIST(
+    train_dataset = datasets.STL10(
         root="./data",
-        train=True,
+        split="train",
         download=True,
         transform=transform
     )
 
-    test_dataset = datasets.FashionMNIST(
+    test_dataset = datasets.STL10(
         root="./data",
-        train=False,
+        split="test",
         download=True,
         transform=transform
     )
