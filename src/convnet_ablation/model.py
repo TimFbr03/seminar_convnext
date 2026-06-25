@@ -22,7 +22,7 @@ class FashionConvNeXt(nn.Module):
                 1,
                 dim,
                 kernel_size=4,
-                stride=4
+                stride=2
             )
 
         else:
